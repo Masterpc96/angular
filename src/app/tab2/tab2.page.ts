@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {HEROES} from '../common/mocked/MockHeroes';
+import {Hero} from '../common/models/hero';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +11,13 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  heroes = HEROES;
+  selectedHero: Hero;
 
+
+  @Input() hero: Hero;
+
+  constructor(private router: Router) {}
+
+  baseRoute = this.router.url;
 }

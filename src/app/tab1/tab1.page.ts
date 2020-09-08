@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Hero} from '../common/models/hero';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+    hero1: Hero;
+
+    hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
   constructor() {}
 
 }
